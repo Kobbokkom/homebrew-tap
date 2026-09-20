@@ -11,7 +11,7 @@ cask "gitmenu" do
 
   # The app updates itself; brew only installs it
   auto_updates true
-  depends_on macos: ">= :ventura"
+  depends_on macos: :ventura
 
   app "gitmenu.app"
 
