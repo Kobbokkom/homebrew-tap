@@ -1,16 +1,17 @@
 # Cask for the gitmenu Homebrew tap. Copy it to the tap repository's Casks/ folder after a
-# release, setting version and sha256 (`shasum -a 256 gitmenu_<version>_universal.dmg`).
+# release, setting version and sha256 (`shasum -a 256 gitmenu_<version>_aarch64.dmg`).
 cask "gitmenu" do
-  version "0.1.0"
-  sha256 "2c3297f1998f3bbcdb424e257af3716d6d766174b604682e9e504c680bca00c2"
+  version "0.1.1"
+  sha256 "598a053b2e8e9e205af25a85809a6f3301eba20bee083ce73e5f47b7d01221c3"
 
-  url "https://github.com/semanticist21/gitmenu/releases/download/v#{version}/gitmenu_#{version}_universal.dmg"
+  url "https://github.com/semanticist21/gitmenu/releases/download/v#{version}/gitmenu_#{version}_aarch64.dmg"
   name "gitmenu"
   desc "Menu bar git panel inspired by VS Code Source Control and GitLens"
   homepage "https://kkom.net/products/gitmenu"
 
   # The app updates itself; brew only installs it
   auto_updates true
+  depends_on arch: :arm64
   depends_on macos: :ventura
 
   app "gitmenu.app"
