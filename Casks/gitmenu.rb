@@ -1,8 +1,8 @@
 # Cask for the gitmenu Homebrew tap. Copy it to the tap repository's Casks/ folder after a
 # release, setting version and sha256 (`shasum -a 256 gitmenu_<version>_aarch64.dmg`).
 cask "gitmenu" do
-  version "0.1.4"
-  sha256 "4b971641b0605eeacad29032986e9b6a8dc49f2b2b0b0dd321b99b67e5e96392"
+  version "0.1.6"
+  sha256 "977a1f17e161772a1884d58c83fcebdc4cafd288c5298c3b93ab08f1eb1b3270"
 
   url "https://github.com/semanticist21/gitmenu/releases/download/v#{version}/gitmenu_#{version}_aarch64.dmg"
   name "gitmenu"
@@ -15,6 +15,14 @@ cask "gitmenu" do
   depends_on macos: :ventura
 
   app "gitmenu.app"
+
+  # An upgrade first moves the installed app aside, so one deleted or moved by hand stops it with
+  # "It seems the App source '/Applications/gitmenu.app' is not there". Nothing in this cask runs
+  # before that except loading it, so say how to recover here.
+  if !Cask.generating_hash? && cask.caskroom_path.directory? && !Pathname("#{appdir}/gitmenu.app").exist?
+    opoo "Homebrew lists gitmenu as installed, but #{appdir}/gitmenu.app is missing. If the " \
+         "upgrade fails, run `brew uninstall --cask --force gitmenu`, then install it again."
+  end
 
   zap trash: [
     "~/Library/Application Support/gitmenu",
