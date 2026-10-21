@@ -1,8 +1,8 @@
 # Cask for the gitmenu Homebrew tap. Copy it to the tap repository's Casks/ folder after a
 # release, setting version and sha256 (`shasum -a 256 gitmenu_<version>_aarch64.dmg`).
 cask "gitmenu" do
-  version "0.1.7"
-  sha256 "30bb08ef3afdc4b6822c5c9e22e8ccd757fda00409cd54d23e33d40702ab36fc"
+  version "0.1.8"
+  sha256 "4db72cd348b25b2fb0713d61f3c83013a71179a2f7e2374132a0dd9fb1b1e302"
 
   url "https://github.com/semanticist21/gitmenu/releases/download/v#{version}/gitmenu_#{version}_aarch64.dmg"
   name "gitmenu"
