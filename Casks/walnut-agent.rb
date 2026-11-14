@@ -1,6 +1,6 @@
 cask "walnut-agent" do
-  version "0.1.2"
-  sha256 "da605b2f2e23ab13624f25f768d29bb0eb59b8a01461403bef6e7262af2b62ba"
+  version "0.1.3"
+  sha256 "dff241cef5445e0e0c863eeb9a734fba866f9065f4a2be697b0dbaa65d9462c8"
 
   url "https://github.com/Kobbokkom/walnut-webview-tester/releases/download/walnut-agent-v#{version}/walnut-agent-#{version}-macos-universal.zip"
   name "Walnut Agent"
