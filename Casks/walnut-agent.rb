@@ -1,6 +1,6 @@
 cask "walnut-agent" do
-  version "0.1.5"
-  sha256 "e2539754416b5001719f896da005d0820817cd2340ba137a7d471afc605d7811"
+  version "0.1.6"
+  sha256 "d087606c6fa4713d625efbb26e7b26736f431d6354f1117bc067f697f4972e5f"
 
   url "https://github.com/Kobbokkom/walnut-webview-tester/releases/download/walnut-agent-v#{version}/walnut-agent-#{version}-macos-universal.zip"
   name "Walnut Agent"
@@ -12,4 +12,5 @@ cask "walnut-agent" do
   binary "Walnut Agent.app/Contents/MacOS/walnut-agent"
   artifact "skill", target: "#{HOMEBREW_PREFIX}/share/walnut-agent/skill"
 end
+
 
